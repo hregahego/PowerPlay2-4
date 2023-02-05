@@ -58,8 +58,8 @@ import static org.firstinspires.ftc.teamcode.drive.DriveConstants.kV;
 
 @Config
 public class Drivetrain extends MecanumDrive implements Subsystem {
-    public static PIDCoefficients TRANSLATIONAL_PID = new PIDCoefficients(8, 0, 0);
-    public static PIDCoefficients HEADING_PID = new PIDCoefficients(8, 0, 0);
+    public static PIDCoefficients TRANSLATIONAL_PID = new PIDCoefficients(8.5, 0, 0.05);
+    public static PIDCoefficients HEADING_PID = new PIDCoefficients(8.525, 0, 0.05);
     public static double xerror = 0.2;
     public static double yerror = 0.2;
     public static double headingerror = Math.toRadians(0.5);
@@ -91,7 +91,7 @@ public class Drivetrain extends MecanumDrive implements Subsystem {
         super(kV, kA, kStatic, TRACK_WIDTH, TRACK_WIDTH, LATERAL_MULTIPLIER);
 
         follower = new HolonomicPIDVAFollower(TRANSLATIONAL_PID, TRANSLATIONAL_PID, HEADING_PID,
-                new Pose2d(0.2, 0.2, Math.toRadians(0.5)), 0.5);
+                new Pose2d(0.15,0.15, Math.toRadians(0.5)), 0.5);
 
         LynxModuleUtil.ensureMinimumFirmwareVersion(hardwareMap);
 

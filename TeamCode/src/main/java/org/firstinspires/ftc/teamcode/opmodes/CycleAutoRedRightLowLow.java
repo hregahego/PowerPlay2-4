@@ -16,7 +16,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous
 public class CycleAutoRedRightLowLow extends LinearOpMode {
     Pose2d START_POSE = new Pose2d(37,-67,Math.toRadians(180));
-    Pose2d Preload_POSE = new Pose2d(36,-10, Math.toRadians(180));
+    Pose2d Preload_POSE = new Pose2d(36,-13, Math.toRadians(180));
     Pose2d Score_POSE = new Pose2d(36,-12, Math.toRadians(180));
     Pose2d Intake_POSE = new Pose2d(56, -12, Math.toRadians(180));
     Robot robot;
@@ -42,10 +42,11 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
     public double hzslidesout = 1.0;
     public double hzslidesin = 0.3;
     public double hzslidestransit = 0.48;
-    public double hzslidesscore = 0.6312518;
+    public double hzslidesscore = 0.6012518;
 
-    public double preloadangle = 502;
-    public double scoreangle = -431;
+    public double preloadangle = -220;
+    public double pipckupangle = -630;
+    public double scoreangle = -1020;
 
     private double prev_time = System.currentTimeMillis();
 
@@ -72,7 +73,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 .lineToLinearHeading(Preload_POSE)
                 .UNSTABLE_addTemporalMarkerOffset(-2, () -> {
                     robot.lift.setTargetHeight(liftHigh);
-                    robot.intake.setArmPos(0.54);
+                    robot.intake.setArmPos(0.55);
                 })
                 .UNSTABLE_addTemporalMarkerOffset(-0.2, () -> {
                     robot.turret.setTargetAngle(preloadangle);
@@ -92,7 +93,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 .addTemporalMarker(() -> {
                     robot.lift.setHorizontalPosition(hzslidesin);
                     robot.intake.centerArm();
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                 })
                 .waitSeconds(0.2)
                 .addTemporalMarker(() -> {
@@ -145,7 +146,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -197,7 +198,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -249,7 +250,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -302,7 +303,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.setArmPos(0.44);
                 })
                 .waitSeconds(0.2)
@@ -399,7 +400,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 .addTemporalMarker(() -> {
                     robot.lift.setHorizontalPosition(hzslidesin);
                     robot.intake.centerArm();
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                 })
                 .waitSeconds(0.2)
                 .addTemporalMarker(() -> {
@@ -452,7 +453,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -504,7 +505,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -556,7 +557,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -609,7 +610,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.setArmPos(0.44);
                 })
                 .waitSeconds(0.2)
@@ -706,7 +707,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 .addTemporalMarker(() -> {
                     robot.lift.setHorizontalPosition(hzslidesin);
                     robot.intake.centerArm();
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                 })
                 .waitSeconds(0.2)
                 .addTemporalMarker(() -> {
@@ -759,7 +760,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
 
@@ -812,7 +813,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -864,7 +865,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.centerArm();
                 })
                 .waitSeconds(0.2)
@@ -917,7 +918,7 @@ public class CycleAutoRedRightLowLow extends LinearOpMode {
                 })
                 .waitSeconds(0.3)
                 .addTemporalMarker(() -> {
-                    robot.turret.setTargetAngle(0);
+                    robot.turret.setTargetAngle(pipckupangle);
                     robot.intake.setArmPos(0.44);
                 })
                 .waitSeconds(0.2)
